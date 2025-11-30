@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Alumni Connect</title>
+  <!-- Important: Load the home.css first for navbar and footer styles -->
+  <link rel="stylesheet" href="/static/css/home.css" />
+  <link rel="stylesheet" href="/static/css/signup.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar visible">
+    <h1 class="logo">AN</h1>
+    <nav class="nav-items">
+      <a href="/">Home</a>
+      <a href="/alumniprofile/">Alumni</a>
+      <a href="/#Port">Students</a>
+      <a href="/postredirect/">Alumni Networking</a>
+      <a href="/jobportal/">Job Portal</a>
+      <a href="/donation/">Donations</a>
+      <a href="/#Skill">Contact Us</a>
+      <a href="/signup/" class="active">Sign Up</a>
+      <a href="/login/">Login</a>
+    </nav>
+    <div class="mobile-menu-btn">
+      <span class="material-symbols-outlined">menu</span>
+    </div>
+    <a href="/notfication/" class="contact-icon">
+      <span class="material-symbols-outlined">mail</span>
+    </a>
+  </header>
+
+  <!-- Sign Up Section -->
+  <section class="signup-section">
+    <div class="signup-container">
+      <div class="signup-header">
+        <h2>Create Your Account</h2>
+        <p>Join our alumni network to connect, collaborate, and grow</p>
+      </div>
+
+      <!-- Continuous Form -->
+      <form id="signup-form">
+        <!-- Account Information -->
+        <div class="form-section">
+          <h3>Account Information</h3>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <div class="input-with-icon">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone_number">Phone Number</label>
+            <div class="input-with-icon">
+              <i class="fas fa-phone"></i>
+              <input type="tel" id="phone_number" name="phone_number" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-with-icon">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="password" name="password" required>
+            </div>
+            <div class="password-strength">
+              <div class="strength-bar"></div>
+              <span class="strength-text">Password strength</span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <div class="input-with-icon">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="form-section">
+          <h3>Personal Information</h3>
+          
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <div class="input-with-icon">
+              <i class="fas fa-user"></i>
+              <input type="text" id="name" name="name" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="date_of_birth">Date of Birth</label>
+            <div class="input-with-icon">
+              <i class="fas fa-calendar"></i>
+              <input type="date" id="date_of_birth" name="date_of_birth" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="address">Current Address</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+          </div>
+        </div>
+
+        <!-- Educational Background -->
+        <div class="form-section">
+          <h3>Educational Background</h3>
+          
+          <div class="form-group toggle-group">
+            <label>I am a:</label>
+            <div class="toggle-container">
+              <span class="toggle-text">Student</span>
+              <div class="toggle-switch">
+                <input class="toggle-input" id="toggle" type="checkbox">
+                <label class="toggle-label" for="toggle"></label>
+              </div>
+              <span class="toggle-text">Alumni</span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="institute_name">Institution</label>
+            <div class="input-with-icon">
+              <i class="fas fa-university"></i>
+              <input type="text" id="institute_name" name="institute_name" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="name_of_degree">Degree</label>
+            <div class="input-with-icon">
+              <i class="fas fa-graduation-cap"></i>
+              <input type="text" id="name_of_degree" name="name_of_degree" required>
+            </div>
+          </div>
+          
+          <!-- Student-specific fields -->
+          <div class="student-fields">
+            <div class="form-group">
+              <label for="graduation_year">Graduation Year</label>
+              <div class="input-with-icon">
+                <i class="fas fa-graduation_year"></i>
+                <input type="text" id="graduation_year" name="graduation_year" required>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Alumni-specific fields -->
+          <div class="alumni-fields" style="display: none;">
+            <div class="form-group">
+              <label for="graduation_year">Graduation Year</label>
+              <div class="input-with-icon">
+                <i class="fas fa-calendar-check"></i>
+                <input type="number" id="graduation_year" name="graduation_year" min="1950" max="2023">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="certificates">Upload Degree Certificate (PDF)</label>
+              <div class="file-upload">
+                <input type="file" id="certificates" name="certificates" accept="application/pdf">
+                <label for="certificate"><i class="fas fa-upload"></i> Choose File</label>
+                <span class="file-name">No file chosen</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="major_field_of_study">Major Field of Study</label>
+            <select id="major_field_of_study" name="major_field_of_study" required>
+              <option value="" disabled selected>Select your major</option>
+              <option value="cs_it">Computer Science & IT</option>
+              <option value="mechanical">Mechanical Engineering</option>
+              <option value="electrical">Electrical Engineering</option>
+              <option value="civil">Civil Engineering</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="form-section">
+          <h3>Work Experience</h3>
+          
+          <div class="form-group">
+            <label for="job_title">Current Job Title</label>
+            <div class="input-with-icon">
+              <i class="fas fa-briefcase"></i>
+              <input type="text" id="job_title" name="job_title">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="current_employer">Company/Organization</label>
+            <div class="input-with-icon">
+              <i class="fas fa-building"></i>
+              <input type="text" id="current_employer" name="current_employer">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="professional_field">Professional Field</label>
+            <div class="input-with-icon">
+              <i class="fas fa-industry"></i>
+              <input type="text" id="professional_field" name="professional_field">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="work_experience">Work Experience (Optional)</label>
+            <textarea id="work_experience" name="work_experience" rows="3" placeholder="Briefly describe your work experience..."></textarea>
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <label class="checkbox-container">
+              <input type="checkbox" name="terms" required>
+              <span class="checkmark"></span>
+              I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>
+            </label>
+          </div>
+          
+          <div class="submit-container">
+            <button type="submit" class="submit-btn">Register <i class="fas fa-check"></i></button>
+          </div>
+        </div>
+        <div class="signup-message" id="signup-message"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Login Link -->
+  <div class="login-link">
+    <p>Already have an account? <a href="/login/">Login</a></p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Alumni Connect</h3>
+        <p>Connecting past, present, and future.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/alumniprofile/">Alumni</a></li>
+          <li><a href="/#Port">Students</a></li>
+          <li><a href="/jobportal/">Job Portal</a></li>
+          <li><a href="/donation/">Donations</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, Campus City</p>
+        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+        <p><i class="fas fa-envelope"></i> info@alumniconnect.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year">2024</span> Alumni Connect. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/static/js/signup.js"></script>
+</body>
+</html>

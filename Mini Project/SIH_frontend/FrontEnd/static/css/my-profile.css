@@ -1,0 +1,276 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+    border: 2px solid grey;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    margin-bottom: 20px;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    margin-bottom: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    display: flex;
+    color: #000;
+    align-items: center;
+}
+
+li a span{
+    margin-left: 30px;
+}
+
+
+
+.profile-button {
+    display: block;
+    background-color: #0073b1;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-content {
+    margin-left: 235px;
+    padding: 30px;
+    flex-grow: 1; 
+}
+
+.profile-header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.header-left {
+    position: relative;
+    width: 100%;
+}
+
+.background-banner {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.profile-pic-large {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    position: absolute;
+    bottom: -35px;
+    right: 35px;
+    z-index: 1;
+    background-position: center;
+}
+.profile-pic-large> img{
+    border-radius: 50%;
+    height: 220px;
+    width: 220px;
+    object-fit: fill;
+}
+.header-right h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header-right p {
+    font-size: 16px;
+    color: #666;
+}
+
+.location-info {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.connect-button, .message-button {
+    background-color: #0073b1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.connect-button:hover, .message-button:hover {
+    background-color: #005582;
+}
+
+.about-section, .experience-section, .education-section {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.about-section h2, .experience-section h2, .education-section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.experience-item, .education-item {
+    margin-bottom: 20px;
+}
+
+.experience-item h3, .education-item h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.experience-item p, .education-item p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+.location-info span{
+    margin-left: 10px;
+}
+
+.post-container {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-user-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.post-user-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.post-content p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.post-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.interaction-button {
+    background-color: transparent;
+    border: none;
+    color: #0073b1;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.interaction-button:hover {
+    background-color: #f0f0f0;
+}
+
+.like-button::before, .comment-button::before, .share-button::before {
+    content: "";
+    display: inline-block;
+    background-size: contain;
+    text-align: center;
+}
+
+#post{
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: -20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+#professional{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+#post h2 button{
+    background-color: white;
+    color: #0073b1;
+    border: 5px solid #0073b1;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: bolder;
+    float: right;
+}
+a{
+    text-decoration: none;
+    color: #0073b1;
+}

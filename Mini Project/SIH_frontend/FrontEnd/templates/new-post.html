@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>My Profile</title>
+        <link href="/static/css/new-post.css" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="new-post-container">
+            <header>
+              <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
+                    <!--Add link to home page-->
+                    
+                    <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                </svg></a>
+              <h1>Create Post</h1>
+             
+            </header>
+          
+            <div class="upload-area">
+                <label for="file-upload" class="upload-icon">
+                    <!-- Plus Icon -->
+                     <div class="mx-auto py-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-square mx-auto p-4" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                    </svg>
+                    </div>
+                    <!-- Hidden File Input -->
+                    <input type="file" accept="image/*, video/*" id="file-upload"/>
+                </label>
+                <div class="preview" id="preview">
+                  <!-- Media Preview will be displayed here -->
+                </div>
+            </div>
+              
+            <!--Caption-->
+            <div class="caption-section">
+                <textarea id="caption" placeholder="Write a caption..."></textarea>
+                <div id="char-count">0/2200</div>
+            </div>
+              
+            <!--Tag & location-->
+            <div class="tags-location-section ">
+              <input type="text" placeholder="Tag people..." class="tag-input" />
+              <input type="text" placeholder="Add location..." class="location-input" />
+            </div>
+          
+            <!--Additional features-->
+            <div class="advanced-settings">
+              <label>
+                <input type="checkbox" /> Turn Off Commenting
+              </label>
+              <label>
+                <input type="checkbox" /> Hide Like and View Counts
+              </label>
+            </div>
+            <!--Post Button-->
+            <button class="post-btn"><b>POST</b></button>
+          </div>
+          <script src="/static/js/new-post.js"></script>
+    </body>
+</html>

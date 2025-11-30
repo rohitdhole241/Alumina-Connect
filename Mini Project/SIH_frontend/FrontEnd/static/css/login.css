@@ -1,0 +1,272 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom right, #6a86b4, #1e90ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container-wrapper {
+    display: flex;
+    max-width: 600px;
+    width: 90%;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+
+.login-section {
+    width: 50%;
+    padding: 20px;
+    background: #f5deb3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+form {
+    width: 100%;
+    max-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px; 
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background: #f0f0f0;
+}
+
+button.btn-success {
+    width: 100%;
+    padding: 10px;
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.btn-success:hover {
+    background: #16a34a;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    margin-top: 10px;
+}
+
+a p {
+    color: #555;
+}
+
+a span {
+    color: #007bff;
+}
+
+a:hover span {
+    text-decoration: underline;
+}
+
+
+.image-section {
+    width: 50%;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.slide img {
+    width: 70%;
+    max-height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.btns {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btns div {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btns div:hover {
+    background: #007bff;
+}
+
+.btnhid {
+    background: #ccc;
+}
+
+.btns div:not(.btnhid) {
+    background: #007bff;
+}
+
+
+@media (max-width: 768px) {
+    .container-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .login-section, .image-section {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .slide img {
+        width: 100%;
+        max-height: 120px;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .btns {
+        position: relative;
+        bottom: 0;
+        margin-top: 10px;
+        transform: translateX(-50%);
+    }
+
+    label {
+        font-size: 12px; 
+    }
+    .notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.notification.success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+  display: block;
+}
+
+.notification.error {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+  display: block;
+}
+}
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+  
+  .notification.success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+    display: block;
+  }
+  
+  .notification.error {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+    display: block;
+  }

@@ -1,0 +1,652 @@
+/* Donation Page Styles */
+:root {
+  --primary-color: #021526;
+  --secondary-color: #7fa1c3;
+  --accent-color: #6482ad;
+  --light-color: #e2dad6;
+  --dark-color: #343a40;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --white-color: #ffffff;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: 600;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.navbar .nav-items {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar .nav-items a {
+  color: var(--white-color);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: var(--transition);
+}
+
+.navbar .nav-items a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: var(--transition);
+}
+
+.navbar .nav-items a:hover::after,
+.navbar .nav-items a.active::after {
+  width: 100%;
+}
+
+.navbar .auth-buttons {
+  display: none;
+}
+
+.navbar .mobile-menu-btn {
+  display: none;
+  cursor: pointer;
+  color: var(--white-color);
+}
+
+/* Donation Hero Section */
+.donation-hero {
+  background: linear-gradient(rgba(2, 21, 38, 0.8), rgba(2, 21, 38, 0.8)), url("../img/donation-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  color: var(--white-color);
+  text-align: center;
+  padding: 8rem 2rem 5rem;
+  margin-bottom: 3rem;
+}
+
+.donation-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.donation-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.donation-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--secondary-color);
+}
+
+.section-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: var(--dark-color);
+  font-size: 1.1rem;
+}
+
+/* Donation Options */
+.donation-options {
+  padding: 4rem 0;
+  background-color: var(--white-color);
+}
+
+.donation-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Update the donation card structure to ensure consistent button alignment */
+.donation-card {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 450px; /* Fixed height for all cards */
+}
+
+.donation-icon {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.donation-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Update the donation card structure to ensure consistent button alignment */
+.donation-card p {
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Update the donation card structure to ensure consistent button alignment */
+.donation-progress {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--dark-color);
+}
+
+/* Fix the select button positioning to be consistent across all cards */
+.select-fund-btn {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  margin-top: auto; /* Push to bottom of flex container */
+  position: relative; /* Ensure proper stacking context */
+  bottom: 0; /* Align at bottom */
+}
+
+.select-fund-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Donation Form */
+.donation-form-section {
+  padding: 4rem 0;
+  background-color: var(--light-color);
+}
+
+.donation-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  padding: 3rem;
+}
+
+.form-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.selected-fund h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.selected-fund p {
+  color: var(--dark-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.amount-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.amount-option {
+  background-color: var(--white-color);
+  border: 1px solid #ced4da;
+  color: var(--dark-color);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  flex: 1;
+  min-width: 80px;
+  text-align: center;
+}
+
+.amount-option:hover,
+.amount-option.selected {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  border-color: var(--secondary-color);
+}
+
+.custom-amount {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 500;
+  color: #333;
+  z-index: 1;
+}
+
+/* Fix for donation form input text visibility */
+#donation-form input[type="text"],
+#donation-form input[type="email"],
+#donation-form input[type="tel"],
+#donation-form input[type="number"],
+#donation-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: #333; /* Ensure text is visible */
+  background-color: white; /* Ensure background is light */
+}
+
+/* Fix for custom amount input */
+.custom-amount input {
+  padding-left: 30px !important;
+  color: #333 !important; /* Force text color */
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(127, 161, 195, 0.25);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.donate-btn {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.donate-btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Impact Section */
+.impact-section {
+  padding: 5rem 0;
+  background-color: var(--white-color);
+  text-align: center;
+}
+
+.impact-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.impact-stat {
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.2rem;
+  color: var(--dark-color);
+}
+
+/* Testimonials */
+.testimonials-section {
+  padding: 5rem 0;
+  background-color: var(--light-color);
+}
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.testimonial {
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.testimonial:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-content {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.testimonial-content:before {
+  content: "\201C";
+  font-size: 4rem;
+  position: absolute;
+  top: -2rem;
+  left: -1rem;
+  color: rgba(127, 161, 195, 0.2);
+  font-family: serif;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial-author img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+.author-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--dark-color);
+}
+
+/* Toast Notifications */
+#toastBox {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+.toast {
+  background-color: var(--white-color);
+  color: var(--dark-color);
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  animation: slideIn 0.3s ease forwards;
+}
+
+.toast.success {
+  border-left: 5px solid var(--success-color);
+}
+
+.toast.error {
+  border-left: 5px solid var(--danger-color);
+}
+
+.toast.info {
+  border-left: 5px solid var(--info-color);
+}
+
+.toast.warning {
+  border-left: 5px solid var(--warning-color);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .donation-hero h1 {
+    font-size: 3rem;
+  }
+
+  .donation-form-container {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .donation-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .amount-options {
+    justify-content: center;
+  }
+
+  .impact-stat {
+    min-width: 150px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .donation-hero h1 {
+    font-size: 2rem;
+  }
+
+  .donation-hero p {
+    font-size: 1rem;
+  }
+
+  .donation-form-container {
+    padding: 1.5rem;
+  }
+
+  .amount-option {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+}
+.donation-card {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 450px; /* Fixed height for all cards */
+}
+
+.donation-card p {
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.donation-progress {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.select-fund-btn {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  margin-top: auto; /* Push to bottom of flex container */
+  position: relative; /* Ensure proper stacking context */
+  bottom: 0; /* Align at bottom */
+}

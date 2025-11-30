@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Donation - Alumni Networking</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/donation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">AN</div>
+        <nav class="nav-items">
+            <a href="/">Home</a>
+            <a href="/#alumni-section">Alumni</a>
+            <a href="/#student-section">Students</a>
+            <a href="/#features">Features</a>
+            <a href="/#donation-section" class="active">Donations</a>
+            <a href="/#skill">Contact Us</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="/login/" class="login-btn">Login</a>
+            <a href="/signup/" class="signup-btn">Sign Up</a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Donation Hero Section -->
+    <section class="donation-hero">
+        <div class="donation-hero-content">
+            <h1>Make a Difference</h1>
+            <p>Your contributions help support scholarships, infrastructure improvements, research initiatives, and special programs that benefit both current students and the broader alumni community.</p>
+        </div>
+    </section>
+
+    <!-- Donation Options -->
+    <section class="donation-options">
+        <div class="container">
+            <h2 class="section-title">Choose Your Impact</h2>
+            <p class="section-description">Select where you'd like your donation to make a difference</p>
+            
+            <div class="donation-cards">
+                <div class="donation-card" data-fund="scholarship">
+                    <div class="donation-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Scholarship Fund</h3>
+                    <p>Help deserving students achieve their educational goals by contributing to our scholarship fund.</p>
+                    <div class="donation-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%;"></div>
+                        </div>
+                        <div class="progress-info">
+                            <span>₹7,50,000 raised</span>
+                            <span>Goal: ₹10,00,000</span>
+                        </div>
+                    </div>
+                    <button class="select-fund-btn">Select</button>
+                </div>
+                
+                <div class="donation-card" data-fund="infrastructure">
+                    <div class="donation-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Infrastructure Development</h3>
+                    <p>Support the improvement and expansion of campus facilities to enhance the learning environment.</p>
+                    <div class="donation-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 45%;"></div>
+                        </div>
+                        <div class="progress-info">
+                            <span>₹9,00,000 raised</span>
+                            <span>Goal: ₹20,00,000</span>
+                        </div>
+                    </div>
+                    <button class="select-fund-btn">Select</button>
+                </div>
+                
+                <div class="donation-card" data-fund="research">
+                    <div class="donation-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Research Initiatives</h3>
+                    <p>Fund innovative research projects that address real-world challenges and advance knowledge.</p>
+                    <div class="donation-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 60%;"></div>
+                        </div>
+                        <div class="progress-info">
+                            <span>₹6,00,000 raised</span>
+                            <span>Goal: ₹10,00,000</span>
+                        </div>
+                    </div>
+                    <button class="select-fund-btn">Select</button>
+                </div>
+                
+                <div class="donation-card" data-fund="general">
+                    <div class="donation-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>General Fund</h3>
+                    <p>Support the overall mission of our institution with a contribution to our general fund.</p>
+                    <div class="donation-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 30%;"></div>
+                        </div>
+                        <div class="progress-info">
+                            <span>₹3,00,000 raised</span>
+                            <span>Goal: ₹10,00,000</span>
+                        </div>
+                    </div>
+                    <button class="select-fund-btn">Select</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Form -->
+    <section class="donation-form-section">
+        <div class="container">
+            <h2 class="section-title">Make Your Donation</h2>
+            <div class="donation-form-container">
+                <form id="donation-form">
+                    <div class="form-header">
+                        <div class="selected_fund">
+                            <h3>Selected Fund: <span id="selected-fund-name">General Fund</span></h3>
+                            <p id="selected-fund-description">Support the overall mission of our institution with a contribution to our general fund.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donation_amount">Donation Amount (₹)</label>
+                        <div class="amount-options">
+                            <button type="button" class="amount-option" data-amount="1000">₹1,000</button>
+                            <button type="button" class="amount-option" data-amount="5000">₹5,000</button>
+                            <button type="button" class="amount-option" data-amount="10000">₹10,000</button>
+                            <button type="button" class="amount-option" data-amount="25000">₹25,000</button>
+                        </div>
+                        <div class="custom-amount">
+                            <span class="currency-symbol">₹</span>
+                            <input type="number" id="donation_amount" name="donation_amount" placeholder="Enter custom amount" min="100">                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donor_name">Your Name</label>
+                        <input type="text" id="donor_name" name="donor_name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donor_email">Email Address</label>
+                        <input type="email" id="donor_email" name="donor_email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donor_phone">Phone Number</label>
+                        <input type="tel" id="donor_phone" name="donor_phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donor_message">Message (Optional)</label>
+                        <textarea id="donor_message" name="donor_message" rows="3" placeholder="Share why you're making this donation..."></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="anonymous-donation" name="anonymous-donation">
+                            Make this donation anonymous
+                        </label>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="recurring-donation" name="recurring-donation">
+                            Make this a monthly recurring donation
+                        </label>
+                    </div>
+                    
+                    <button type="button" id="donate-button" class="donate-btn">Donate Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="container">
+            <h2 class="section-title">Your Impact</h2>
+            <div class="impact-stats">
+                <div class="impact-stat">
+                    <div class="stat-number"><span class="counter" data-target="500">0</span>+</div>
+                    <div class="stat-label">Students Supported</div>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">₹<span class="counter" data-target="25000000">0</span></div>
+                    <div class="stat-label">Total Donations</div>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number"><span class="counter" data-target="50">0</span>+</div>
+                    <div class="stat-label">Projects Funded</div>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number"><span class="counter" data-target="1000">0</span>+</div>
+                    <div class="stat-label">Alumni Donors</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Donor Stories</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"I donated to the scholarship fund because I remember how challenging it was to finance my education. It feels great to help the next generation of students achieve their dreams."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="/static/img/donor1.png" alt="Donor">
+                        <div class="author-info">
+                            <h4>Rajiv Sharma</h4>
+                            <p>Class of 2005</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Contributing to the research initiatives has been incredibly rewarding. Seeing the innovative projects that come out of our alma mater makes me proud to be an alumnus."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="/static/img/donor2.png" alt="Donor">
+                        <div class="author-info">
+                            <h4>Priya Patel</h4>
+                            <p>Class of 2010</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The infrastructure development fund is close to my heart. Modern facilities are essential for quality education, and I'm happy to contribute to creating better learning environments."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="/static/img/donor3.png" alt="Donor">
+                        <div class="author-info">
+                            <h4>Amit Verma</h4>
+                            <p>Class of 1998</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification Container -->
+    <div id="toastBox"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Alumni Networking</h3>
+                <p>Connecting past, present, and future.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#alumni-section">Alumni</a></li>
+                    <li><a href="/#student-section">Students</a></li>
+                    <li><a href="/jobportal/">Job Portal</a></li>
+                    <li><a href="/#donation-section">Donations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Mentorship</a></li>
+                    <li><a href="#">Scholarships</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@alumninetwork.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+                <p>Address: 123 Campus Drive, University City, ST 12345</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> Alumni Networking. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/donation.js"></script>
+</body>
+</html>

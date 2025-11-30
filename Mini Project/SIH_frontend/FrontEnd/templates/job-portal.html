@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal - Alumni Connect</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/job-portal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar visible">
+        <h1 class="logo">AN</h1>
+        <nav class="nav-items">
+            <a href="/">Home</a>
+            <a href="/alumniprofile/">Alumni</a>
+            <a href="/">Students</a>
+            <a href="/postredirect/">Alumni Networking</a>
+            <a href="/jobportal/" class="active">Job Portal</a>
+            <a href="/donation/">Donations</a>
+            <a href="/">Contact Us</a>
+            <a href="/signup/">Sign Up</a>
+            <a href="/login/">Login</a>
+        </nav>
+        <div class="mobile-menu-btn">
+            <span class="material-symbols-outlined">menu</span>
+        </div>
+        <a href="/notfication/" class="contact-icon">
+            <span class="material-symbols-outlined">mail</span>
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="job-hero">
+        <div class="container">
+            <h1>Find the career you deserve</h1>
+            <p>Your dream job is just a few clicks away.</p>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Job title, keywords, or company">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <a href="#featured-jobs" class="scroll-btn">See our curated jobs</a>
+            
+            <!-- Map Section -->
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <!-- Featured Jobs Section -->
+    <section class="featured-jobs" id="featured-jobs">
+        <div class="container">
+            <h2>Featured Jobs</h2>
+            <p>Exclusive opportunities for our alumni network</p>
+            
+            <div class="job-filters">
+                <div class="filter">
+                    <select name="industry">
+                        <option value="">All Industries</option>
+                        <option value="tech">Technology</option>
+                        <option value="finance">Finance</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="education">Education</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <select name="location">
+                        <option value="">All Locations</option>
+                        <option value="remote">Remote</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="bangalore">Bangalore</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <select name="job-type">
+                        <option value="">All Job Types</option>
+                        <option value="full-time">Full-time</option>
+                        <option value="part-time">Part-time</option>
+                        <option value="contract">Contract</option>
+                        <option value="internship">Internship</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="job-listings">
+                <div class="job-card">
+                    <div class="job-header">
+                        <img src="https://logo.clearbit.com/google.com" alt="Google" onerror="this.src='./img/placeholder.jpg'">
+                        <div class="job-title">
+                            <h3>Senior Software Engineer</h3>
+                            <p>Google - Bangalore, India</p>
+                        </div>
+                        <div class="job-type">Full-time</div>
+                    </div>
+                    <div class="job-details">
+                        <p>Join our team to build innovative solutions that impact millions of users worldwide. You'll work on cutting-edge technologies and collaborate with talented engineers.</p>
+                        <div class="job-skills">
+                            <span>Java</span>
+                            <span>Python</span>
+                            <span>Cloud</span>
+                            <span>Algorithms</span>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <div class="job-salary">₹25L - ₹40L per annum</div>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" onerror="this.src='./img/placeholder.jpg'">
+                        <div class="job-title">
+                            <h3>Product Manager</h3>
+                            <p>Microsoft - Hyderabad, India</p>
+                        </div>
+                        <div class="job-type">Full-time</div>
+                    </div>
+                    <div class="job-details">
+                        <p>Lead product development for our cloud services division. You'll define product strategy, work with cross-functional teams, and drive product launches.</p>
+                        <div class="job-skills">
+                            <span>Product Strategy</span>
+                            <span>Agile</span>
+                            <span>Azure</span>
+                            <span>Analytics</span>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <div class="job-salary">₹18L - ₹30L per annum</div>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <img src="https://logo.clearbit.com/tcs.com" alt="TCS" onerror="this.src='./img/placeholder.jpg'">
+                        <div class="job-title">
+                            <h3>Data Scientist</h3>
+                            <p>TCS - Mumbai, India</p>
+                        </div>
+                        <div class="job-type">Full-time</div>
+                    </div>
+                    <div class="job-details">
+                        <p>Analyze complex datasets to extract insights and build predictive models. You'll work with business teams to solve real-world problems using data-driven approaches.</p>
+                        <div class="job-skills">
+                            <span>Machine Learning</span>
+                            <span>Python</span>
+                            <span>SQL</span>
+                            <span>Statistics</span>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <div class="job-salary">₹12L - ₹20L per annum</div>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <img src="https://logo.clearbit.com/infosys.com" alt="Infosys" onerror="this.src='./img/placeholder.jpg'">
+                        <div class="job-title">
+                            <h3>UX/UI Designer</h3>
+                            <p>Infosys - Pune, India</p>
+                        </div>
+                        <div class="job-type">Full-time</div>
+                    </div>
+                    <div class="job-details">
+                        <p>Create intuitive and engaging user experiences for enterprise applications. You'll conduct user research, create wireframes, and design visually appealing interfaces.</p>
+                        <div class="job-skills">
+                            <span>Figma</span>
+                            <span>User Research</span>
+                            <span>Prototyping</span>
+                            <span>Design Systems</span>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <div class="job-salary">₹8L - ₹15L per annum</div>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <img src="https://logo.clearbit.com/wipro.com" alt="Wipro" onerror="this.src='./img/placeholder.jpg'">
+                        <div class="job-title">
+                            <h3>DevOps Engineer</h3>
+                            <p>Wipro - Bangalore, India</p>
+                        </div>
+                        <div class="job-type">Full-time</div>
+                    </div>
+                    <div class="job-details">
+                        <p>Implement and manage CI/CD pipelines for enterprise applications. You'll work with development teams to automate deployment processes and improve system reliability.</p>
+                        <div class="job-skills">
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                            <span>Jenkins</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <div class="job-salary">₹10L - ₹18L per annum</div>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <img src="https://logo.clearbit.com/zomato.com" alt="Zomato" onerror="this.src='./img/placeholder.jpg'">
+                        <div class="job-title">
+                            <h3>Frontend Developer</h3>
+                            <p>Zomato - Delhi, India</p>
+                        </div>
+                        <div class="job-type">Full-time</div>
+                    </div>
+                    <div class="job-details">
+                        <p>Build responsive and performant web applications using modern JavaScript frameworks. You'll collaborate with designers and backend developers to create seamless user experiences.</p>
+                        <div class="job-skills">
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            <span>CSS</span>
+                            <span>Responsive Design</span>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <div class="job-salary">₹8L - ₹16L per annum</div>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more">
+                <button>Load More Jobs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Employers Section -->
+    <section class="featured-employers">
+        <div class="container">
+            <h2>Top Employers</h2>
+            <p>Companies actively hiring from our alumni network</p>
+            
+            <div class="employer-grid">
+                <div class="employer-card">
+                    <img src="https://logo.clearbit.com/tata.com" alt="Tata" onerror="this.src='./img/placeholder.jpg'">
+                    <h3>Tata Group</h3>
+                    <p>15 open positions</p>
+                    <a href="#" class="view-jobs">View Jobs</a>
+                </div>
+                
+                <div class="employer-card">
+                    <img src="https://logo.clearbit.com/reliance.com" alt="Reliance" onerror="this.src='./img/placeholder.jpg'">
+                    <h3>Reliance Industries</h3>
+                    <p>12 open positions</p>
+                    <a href="#" class="view-jobs">View Jobs</a>
+                </div>
+                
+                <div class="employer-card">
+                    <img src="https://logo.clearbit.com/hdfcbank.com" alt="HDFC Bank" onerror="this.src='./img/placeholder.jpg'">
+                    <h3>HDFC Bank</h3>
+                    <p>8 open positions</p>
+                    <a href="#" class="view-jobs">View Jobs</a>
+                </div>
+                
+                <div class="employer-card">
+                    <img src="https://logo.clearbit.com/infosys.com" alt="Infosys" onerror="this.src='./img/placeholder.jpg'">
+                    <h3>Infosys</h3>
+                    <p>20 open positions</p>
+                    <a href="#" class="view-jobs">View Jobs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Resources Section -->
+    <section class="career-resources">
+        <div class="container">
+            <h2>Career Resources</h2>
+            <p>Tools and guides to help you succeed in your job search</p>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Resume Builder</h3>
+                    <p>Create a professional resume with our easy-to-use template</p>
+                    <a href="#" class="resource-link">Get Started</a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Interview Prep</h3>
+                    <p>Practice with common interview questions for your industry</p>
+                    <a href="#" class="resource-link">Learn More</a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Skill Courses</h3>
+                    <p>Enhance your skills with our free online courses</p>
+                    <a href="#" class="resource-link">Browse Courses</a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Networking Events</h3>
+                    <p>Connect with industry professionals at our virtual events</p>
+                    <a href="#" class="resource-link">View Calendar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Alumni Connect</h3>
+                <p>Connecting past, present, and future.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/alumniprofile/">Alumni</a></li>
+                    <li><a href="/">Students</a></li>
+                    <li><a href="/jobportal/">Job Portal</a></li>
+                    <li><a href="/donation/">Donations</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, Campus City</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@alumniconnect.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2024</span> Alumni Connect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/static/js/job-portal.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

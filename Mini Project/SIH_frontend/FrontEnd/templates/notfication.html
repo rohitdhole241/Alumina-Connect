@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="/static/css/notification.css" />
+    <title> Notifications Page</title>
+  </head>
+  <body>
+    <button type="button" class="btn btn-secondary back-btn" onclick="goBack()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"></path>
+    </svg>
+    </button>
+
+    <ql-icon class="mdc-button__icon" aria-hidden="true">
+      <!--?lit$927020595$-->
+    </ql-icon>
+
+    <div class="container">
+      <header>
+        <div class="notif_box">
+          <h2 class="title">Notifications</h2>
+          <span id="notifes"></span>
+        </div>
+        <p id="mark_all">Mark all as read</p>
+      </header>
+      <main>
+        <div class="notif_card unread">
+          <img src="/static/img/background-banner.png" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Mark Webber</strong> reacted to your recent post
+              <b>My first tournament today!</b>
+            </p>
+            <p class="time" data-time="2024-08-22T08:45:00Z">1m ago</p>
+          </div>
+        </div>
+        <div class="notif_card unread">
+          <img src="/static/img/alumni.png" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Angela Gray</strong> followed you
+            </p>
+            <p class="time" data-time="2024-08-22T08:40:00Z">5m ago</p>
+          </div>
+        </div>
+        <div class="notif_card unread">
+          <img src="/static/img/aman.png" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Jacob Thompson</strong> has joined your group
+              <strong class="link">Chess Club</strong>
+            </p>
+            <p class="time" data-time="2024-08-21T08:45:00Z">1 day ago</p>
+          </div>
+        </div>
+        <div>
+          <div class="notif_card">
+          <div class="message_card">
+            <img
+            src="/static/img/asm.png"
+            alt="avatar"
+          />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Rizky Hasanuddin</strong> sent you a private message
+            </p>
+            <p class="time" data-time="2024-08-17T08:45:00Z">5 days ago</p>
+          </div>
+          </div>
+        </div>
+        <div class="message">
+              <p>
+                Hello, thanks for setting up the Chess Club. I've been a member
+                for a few weeks now and I'm already having lots of fun and
+                improving my game.
+              </p>
+            </div>
+        </div>
+        
+        <div class="notif_card">
+          <img src="/static/img/chaitrali.png" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Kimberly Smith</strong> commented on your picture
+            </p>
+            <p class="time" data-time="2024-08-15T08:45:00Z">1 week ago</p>
+          </div>
+          <img src="./assets/images/image-chess.webp" class="chess_img" alt="chess" />
+        </div>
+        <div class="notif_card">
+          <img src="/static/img/rohit.png" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Nathan Pererson</strong> reacted to your recent post
+              <b>5 end-game strategies to increase your win rate</b>
+            </p>
+            <p class="time" data-time="2024-08-08T08:45:00Z">2 weeks ago</p>
+          </div>
+        </div>
+        <div class="notif_card">
+          <img src="/static/img/riya.png" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Anna Kim</strong> left the group
+              <strong class="link">Chess Club</strong>
+            </p>
+            <p class="time" data-time="2024-08-08T08:45:00Z">2 weeks ago</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/static/js/notification.js"></script>
+  </body>
+</html>

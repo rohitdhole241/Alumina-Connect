@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Toast Notifications</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f7edff;
+        }
+
+        .buttons {
+            margin: 50px;
+        }
+
+        .buttons button {
+            background-color: #333;
+            color: #fff;
+            border: 0;
+            outline: 0;
+            width: 180px;
+            height: 40px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #toastBox {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .toast {
+            width: 400px;
+            height: 80px;
+            background-color: #fff;
+            font-weight: 500;
+            margin: 15px 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            position: relative;
+            transform: translateX(100%);
+            animation: moveleft 0.3s linear forwards;
+        }
+
+        @keyframes moveleft {
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        .toast i {
+            margin: 0px 20px;
+            font-size: 35px;
+            color: green;
+        }
+
+        .toast.error i {
+            color: red;
+        }
+
+        .toast.invalid i {
+            color: orange;
+        }
+
+        .toast.warning i {
+            color: yellow;
+        }
+
+        .toast::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 5px;
+            background: green;
+            animation: success 5s linear forwards;
+        }
+
+        @keyframes success {
+            100% {
+                width: 0;
+            }
+        }
+
+        .toast.error::after {
+            background: red;
+        }
+
+        .toast.invalid::after {
+            background: orange;
+        }
+
+        .toast.warning::after {
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="buttons">
+        <button onclick="showToast(successMsg)">Changes Saved</button>
+        <button onclick="showToast(itemAddedMsg)">Item Added</button>
+        <button onclick="showToast(loginSuccessMsg)">Login Successful</button>
+        <button onclick="showToast(registrationCompleteMsg)">Registration Complete</button>
+        <button onclick="showToast(passwordUpdatedMsg)">Password Updated</button>
+        <button onclick="showToast(emailSentMsg)">Email Sent</button>
+        <button onclick="showToast(errMsg)">Error Occurred</button>
+        <button onclick="showToast(invalidCredentialsMsg)">Invalid Credentials</button>
+        <button onclick="showToast(formSubmissionFailedMsg)">Form Submission Failed</button>
+        <button onclick="showToast(networkErrorMsg)">Network Error</button>
+        <button onclick="showToast(accessDeniedMsg)">Access Denied</button>
+        <button onclick="showToast(fileUploadFailedMsg)">File Upload Failed</button>
+        <button onclick="showToast(unsavedChangesMsg)">Unsaved Changes</button>
+        <button onclick="showToast(sessionExpiringMsg)">Session Expiring</button>
+        <button onclick="showToast(passwordStrengthMsg)">Password Strength</button>
+        <button onclick="showToast(dataDeletionMsg)">Data Deletion</button>
+    </div>
+    <div id="toastBox"></div>
+
+    <script>
+        let toastBox = document.getElementById("toastBox");
+
+        // Success Messages
+        let successMsg = '<i class="fa-solid fa-square-check"></i> Changes Saved Successfully!';
+        let itemAddedMsg = '<i class="fa-solid fa-square-check"></i> Item Added!';
+        let loginSuccessMsg = '<i class="fa-solid fa-square-check"></i> Login Successful!';
+        let registrationCompleteMsg = '<i class="fa-solid fa-square-check"></i> Registration Complete!';
+        let passwordUpdatedMsg = '<i class="fa-solid fa-square-check"></i> Password Updated!';
+        let emailSentMsg = '<i class="fa-solid fa-square-check"></i> Email Sent!';
+
+        // Error Messages
+        let errMsg = '<i class="fa-solid fa-circle-exclamation"></i> Error Occurred!';
+        let invalidCredentialsMsg = '<i class="fa-solid fa-circle-exclamation"></i> Invalid Credentials!';
+        let formSubmissionFailedMsg = '<i class="fa-solid fa-circle-exclamation"></i> Form Submission Failed!';
+        let networkErrorMsg = '<i class="fa-solid fa-circle-exclamation"></i> Network Error!';
+        let accessDeniedMsg = '<i class="fa-solid fa-circle-exclamation"></i> Access Denied!';
+        let fileUploadFailedMsg = '<i class="fa-solid fa-circle-exclamation"></i> File Upload Failed!';
+
+        // Warning Messages
+        let unsavedChangesMsg = '<i class="fa-solid fa-triangle-exclamation"></i> Unsaved Changes!';
+        let sessionExpiringMsg = '<i class="fa-solid fa-triangle-exclamation"></i> Session Expiring!';
+        let passwordStrengthMsg = '<i class="fa-solid fa-triangle-exclamation"></i> Password Strength Weak!';
+        let dataDeletionMsg = '<i class="fa-solid fa-triangle-exclamation"></i> Confirm Data Deletion!';
+
+        function showToast(msg) {
+            let toast = document.createElement("div");
+            toast.classList.add("toast");
+            toast.innerHTML = msg;
+            toastBox.appendChild(toast);
+            setTimeout(() => {
+                toast.remove();
+            }, 5000);
+            if (msg.includes("Error") || msg.includes("Failed") || msg.includes("Invalid") || msg.includes("Denied")) {
+                toast.classList.add("error");
+            }
+            if (msg.includes("Unsaved") || msg.includes("Session") || msg.includes("Password") || msg.includes("Deletion")) {
+                toast.classList.add("warning");
+            }
+        }
+    </script>
+</body>
+
+</html>
